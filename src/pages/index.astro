@@ -6,25 +6,117 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Allo Toi</title>
+    <title>OpenClaw - Your Personal AI Assistant</title>
     <style>
+      :root {
+        --primary: #ff6b6b;
+        --secondary: #4ecdc4;
+        --bg: #1a1a2e;
+        --text: #eaeaea;
+        --card-bg: #16213e;
+      }
       body {
-        font-family: system-ui, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
         margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        text-align: center;
       }
       h1 {
+        font-size: 3.5rem;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .lobster {
         font-size: 4rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
+      p.lead {
+        font-size: 1.5rem;
+        color: #a0a0a0;
+        margin-bottom: 3rem;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        text-align: left;
+      }
+      .card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card h3 {
+        color: var(--secondary);
+        margin-top: 0;
+      }
+      footer {
+        margin-top: 4rem;
+        font-size: 0.9rem;
+        color: #666;
+      }
+      a.btn {
+        display: inline-block;
+        background: var(--primary);
         color: white;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        padding: 12px 24px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 2rem;
+        transition: background 0.2s;
+      }
+      a.btn:hover {
+        background: #ff5252;
       }
     </style>
   </head>
   <body>
-    <h1>Allo Toi</h1>
+    <div class="container">
+      <span class="lobster">🦞</span>
+      <h1>OpenClaw</h1>
+      <p class="lead">Your sovereign AI assistant. Any OS. Any Platform.</p>
+
+      <div class="features">
+        <div class="card">
+          <h3>🤖 Intelligent Agent</h3>
+          <p>Powered by advanced LLMs like Gemini and Claude. It understands context, remembers conversations, and learns from you.</p>
+        </div>
+        <div class="card">
+          <h3>⚡️ Skill System</h3>
+          <p>Extensible via skills. Control Spotify, manage GitHub repos, check weather, or build your own custom integrations.</p>
+        </div>
+        <div class="card">
+          <h3>🔒 Privacy First</h3>
+          <p>Run it locally on your own hardware. Your data stays yours. No cloud dependency required for core functions.</p>
+        </div>
+        <div class="card">
+          <h3>🌐 Multi-Platform</h3>
+          <p>Interact via Telegram, Discord, Web Interface, or Terminal. OpenClaw lives where you need it.</p>
+        </div>
+      </div>
+
+      <a href="https://github.com/openclaw/openclaw" class="btn">View on GitHub</a>
+
+      <footer>
+        <p>Built with ❤️ using Astro & OpenClaw.</p>
+      </footer>
+    </div>
   </body>
 </html>
